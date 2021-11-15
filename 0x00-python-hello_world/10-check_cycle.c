@@ -9,19 +9,19 @@
  */
 size_t print_listint(const listint_t *h)
 {
-    const listint_t *current;
-    unsigned int n; /* number of nodes */
+    const listint_t *temp;
+    unsigned int i; /* number of nodes */
 
-    current = h;
-    n = 0;
-    while (current != NULL)
+    temp = h;
+    i = 0;
+    while (temp != NULL)
     {
-        printf("%i\n", current->n);
-        current = current->next;
-        n++;
+        printf("%i\n", temp->i);
+        temp = temp->next;
+        i++;
     }
 
-    return (n);
+    return (i);
 }
 
 /**
@@ -30,7 +30,7 @@ size_t print_listint(const listint_t *h)
  * @n: integer to be included in node
  * Return: address of the new element or NULL if it fails
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *add_nodeint(listint_t **head, const int i)
 {
     listint_t *new;
 
@@ -38,7 +38,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
     if (new == NULL)
         return (NULL);
 
-    new->n = n;
+    new->i = i;
     new->next = *head;
     *head = new;
 
@@ -52,12 +52,12 @@ listint_t *add_nodeint(listint_t **head, const int n)
  */
 void free_listint(listint_t *head)
 {
-    listint_t *current;
+    listint_t *temp;
 
     while (head != NULL)
     {
-        current = head;
+        temp = head;
         head = head->next;
-        free(current);
+        free(temp);
     }
 }
