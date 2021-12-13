@@ -31,6 +31,8 @@ class Rectangle:
             raise ValueError("Width must be an integer")
         if (value < 0):
             raise ValueError("Integer cannot be less than zero")
+        self.__width = value
+
     @property
     def height(self):
         """
@@ -47,4 +49,5 @@ class Rectangle:
             raise ValueError("Height must be an integer")
         if (value < 0):
             raise ValueError("Integer cannot be less than zero")
+        self.__height = value
         
