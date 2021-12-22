@@ -17,6 +17,3 @@ def write_file(filename="", text=""):
     with open(filename, mode="w", encoding="utf-8") as f:
         if f.write(text):
             return len(text)
-© 2021 GitHub, Inc.
-Terms
-Privacy
