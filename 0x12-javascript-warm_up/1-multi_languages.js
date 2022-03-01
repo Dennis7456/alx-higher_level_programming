@@ -1,7 +1,5 @@
 #!/usr/bin/node
 
-const firstString = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
-let i = 0;
-for (i; i < firstString.length; i++) {
-  console.log(firstString[i]);
-}
+// Prints three lines each in a new line
+
+console.log('C is fun\nPython is cool\nJavascript is amazing');
