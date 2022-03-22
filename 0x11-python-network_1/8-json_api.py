@@ -8,12 +8,13 @@ from ast import arg
 
 if __name__ == "__main__":
     import requests
+    import json
     from sys import argv
     if len(argv) == 2:
         q = argv[1]
     else:
         q = ""
-    r = requests.post('http://0.0.0.0:5000/search_user', data={'q':q})
+    r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
         r_dict = r.json()
         id = r_dict.get('id')
@@ -22,5 +23,5 @@ if __name__ == "__main__":
             print("No result")
         else:
             print("[{}] {}".format(r_dict.get('id'), r_dict.get('name')))
-    except:
+    except json.JSONDecodeError as e:
         print("Not a valid JSON")
