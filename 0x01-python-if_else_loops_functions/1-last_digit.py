@@ -10,11 +10,15 @@ the number stored in
 the variable number.'''
 
 number = random.randint(-10000, 10000)
-last_digit = int(repr(number)[-1])
-if last_digit > 5:
-    print(f"Last digit of {number} is {last_digit} and is greater than 5")
-elif last_digit == 0:
-    print(f"Last digit of {number} is {last_digit} and is 0")
+last = abs(number) % 10
+if number < 0:
+    last = last * -1
+
+if last == 0:
+    print("Last digit of {:d} is {:d} and is 0".format(number, last))
+elif last < 6:
+    print("Last digit of {:d} is {:d} and is less than 6 and not \
+0".format(number, last))
 else:
-    print(f"Last digit of {number} is \
-{last_digit} and is less than 6 and not 0")
+    print("Last digit of {:d} is {:d} and is greater than \
+5".format(number, last))
